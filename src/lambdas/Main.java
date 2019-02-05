@@ -17,6 +17,11 @@ public class Main {
     }
 
     public static <T> T getBetterElement(T e1, T e2, BiPredicate<T> pred) {
+
+        if (e1 == null || e2 == null) {
+            throw new NullPointerException();
+        }
+
         return pred.test(e1, e2) ? e1 : e2;
     }
 }
